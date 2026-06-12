@@ -23,7 +23,8 @@
 }
 
 .post {
-  width: 300px;
+  width: 350px;
+  height: 250px;
   padding: 1rem;
   margin: 1rem;
   box-shadow: 0 4px 8px 0 rgb(10, 10, 10, 0.2);
@@ -35,4 +36,6 @@
 
 .post-title {
   font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
 }

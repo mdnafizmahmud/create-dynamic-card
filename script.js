@@ -40,19 +40,31 @@ const dataElements = [
 // <p class="post-description">post description 1</p>
 // </div>
 
+// fetch data
+const fetchData = async (config) => {
+  try {
+    const res = await axios(config);
+    return res.data;
+  } catch {
+    throw Error("Data is not fetched");
+  }
+};
+
+// selection
 const posts = document.querySelector(".posts");
 
-const dynamicCards = () => {
-  dataElements.map((post) => {
+const dynamicCards = async () => {
+  const apiData = await fetchData(`https://jsonplaceholder.typicode.com/posts`);
+
+  apiData.map((post) => {
     const postElement = document.createElement("div");
     postElement.classList.add("post");
 
     postElement.innerHTML = `
-  <h4 class="post-title">${post.title}</h4>
- <p class="post-description">${post.description}</p>
-  `;
+    <h4 class="post-title">${post.title}</h4>
+    <p class="post-description">${post.body}</p>`;
+
     posts.appendChild(postElement);
   });
 };
-
 dynamicCards();
