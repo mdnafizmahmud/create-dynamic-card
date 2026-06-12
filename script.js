@@ -1,5 +1,4 @@
 // dummy data
-
 const dataElements = [
   {
     title: "Post title 1",
@@ -34,11 +33,6 @@ const dataElements = [
     description: "Post description 8",
   },
 ];
-
-// <div class="post">
-// <h4 class="post-title">Post title 1</h4>
-// <p class="post-description">post description 1</p>
-// </div>
 
 // fetch data
 const fetchData = async (config) => {
